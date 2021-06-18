@@ -7,6 +7,7 @@ body {
   font-weight: bold;
   width: 100%;
   margin: 0 auto;
+  font-size: 16px;
 }
 ul {
   list-style-type: none;
@@ -52,6 +53,12 @@ main {
   margin-bottom: 65px;
 }
 .res-br {
+  display: none;
+}
+.res-none {
+  display: block;
+}
+.global-nav {
   display: none;
 }
 
@@ -158,17 +165,20 @@ tr, th, td {
 }
 table {
   display: block;
-  width: 100%;
+  width: 70%;
   margin: 0 auto;
   font-weight: bold;
   box-shadow: 0 3px 6px #e5e5e5;
+}
+tbody {
+  background-color: #ffffff;
 }
 tr {
   height: 100px;
   width: 100%;
 }
 th {
-  width: 300px;
+  width: 40%;
   text-align: center;
   line-height: 100px;
 }
@@ -242,7 +252,7 @@ blog
 }
 .blog {
   width: 32%;
-  height: 389px;
+  height: 450px;
   background-color: #ffffff;
   box-shadow: 0 3px 6px #e5e5e5;
   cursor: pointer;
@@ -251,8 +261,11 @@ blog
 .blog img {
   width: 100%;
 }
-.blog-top {
+.blog-detail {
   padding: 19px 30px 0 18px;
+
+}
+.blog-top {
   line-height: 26px;
   font-size: 18px;
 }
@@ -276,9 +289,11 @@ works
   border: 1px solid #DDDDDD;
   border-radius: 8px;
   cursor: pointer;
+  height: 420px;
 }
 .swiper-slide img {
   width: 100%;
+  height: 232px;
 }
 .work-text{
   margin-bottom: 30px;
@@ -386,15 +401,82 @@ footer
 responsive
 -----------------------*/
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 959px) {
+  main {
+    overflow: hidden;
+  }
+  .wrapper {
+    padding: 0 10px;
+  }
   .wrapper {
     max-width: 950px;
   }
   .main-top {
     height: 45vh;
   }
+  .header-middle {
+    display: none;
+  }
+  .circle-bg {
+    background-image: url(../img/circle.png);
+    background-repeat: no-repeat;
+    background-position: top 0 right -160px;
+    height: auto;
+    z-index: 1;
+    padding-bottom: 100px;
+    margin-bottom: 90px;
+  }
+  .main-top-right img {
+    width: 100%;
+  }
+  .accordion-container {
+    width: 100%;
+  }
   .blogs {
     max-width: 980px;
+  }
+  #form {
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px 0;
+  }
+  #contact #name,
+  #contact #email {
+    width: 89%;
+  }
+  .contact-wrapper {
+    width: 100%;
+    padding: 0;
+  }
+  #contact #contact-message {
+    width: 89%;
+  }
+  .res-br {
+    display: block;
+  }
+  .res-none {
+    display: none;
+  }
+  table {
+    background-color: #ffffff;
+    width: 90%;
+  }
+  th, td {
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+  }
+  tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+  }
+  th {
+    width: 50%;
+  }
+  td {
+    text-align: center;
+    padding: 0;
   }
 }
 
@@ -410,14 +492,12 @@ responsive
     justify-content: flex-start;
     align-items: normal;
   }
+  
   .header-icon {
     width: 30px;
     height: 30px;
     margin-left: 20px;
     margin-right: 20px;
-  }
-  .catchcopy br {
-    display: none;
   }
   .header .header-nav .header-left.flex {
     display: flex;
@@ -433,6 +513,7 @@ responsive
     background-position: top 0 right -160px;
     height: auto;
     z-index: 1;
+    padding-bottom: 35px;
   }
   .main-top .main-top-left {
     height: auto;
@@ -440,7 +521,7 @@ responsive
   }
   .catchcopy {
     text-align: center;
-    padding: 80px 10px 20px;
+    padding: 80px 0 20px;
     font-size: 24px;
   }
   .main-top-left p {
@@ -507,6 +588,13 @@ responsive
     vertical-align: inherit;
     border-color: inherit;
   }
+  th {
+    width: 50%;
+  }
+  td {
+    text-align: center;
+    padding: 0;
+  }
   .precaution {
     font-size: 14px;
   }
@@ -559,94 +647,96 @@ responsive
   }
 
   .global-nav {
-  position: fixed;
-  right: -320px; /* これで隠れる */
-  top: 0;
-  width: 300px; /* スマホに収まるくらい */
-  height: 100vh;
-  padding-top: 40px;
-  background-color: #fff;
-  transition: all .6s;
-  z-index: 200;
-  overflow-y: auto; /* メニューが多くなったらスクロールできるように */
-}
-.hamburger {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 40px; /* クリックしやすいようにちゃんと幅を指定する */
-  height: 40px; /* クリックしやすいようにちゃんと高さを指定する */
-  cursor: pointer;
-  z-index: 300;
-}
-.global-nav__list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.global-nav__item {
-  text-align: center;
-  padding: 0 14px;
-}
-.global-nav__item a {
-  display: block;
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
-  text-decoration: none;
-  color: #111;
-}
-.global-nav__item a:hover {
-  background-color: #eee;
-}
-.hamburger__line {
-  position: absolute;
-  left: -10px;
-  width: 30px;
-  height: 3px;
-  background-color: #111;
-  transition: all .6s;
-}
-.hamburger__line--1 {
-  top: 35px;
-}
-.hamburger__line--2 {
-  top: 45px;
-}
-.hamburger__line--3 {
-  top: 55px;
-}
-.black-bg {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 100;
-  background-color: #000;
-  opacity: 0;
-  visibility: hidden;
-  transition: all .6s;
-  cursor: pointer;
-}
-/* 表示された時用のCSS */
-.nav-open .global-nav {
-  right: 0;
-}
-.nav-open .black-bg {
-  opacity: .8;
-  visibility: visible;
-}
-.nav-open .hamburger__line--1 {
-  transform: rotate(45deg);
-  top: 45px;
-}
-.nav-open .hamburger__line--2 {
-  width: 0;
-  left: 50%;
-}
-.nav-open .hamburger__line--3 {
-  transform: rotate(-45deg);
-  top: 45px;
-}
+    display: block;
+    position: fixed;
+    right: -320px; /* これで隠れる */
+    top: 0;
+    width: 300px; /* スマホに収まるくらい */
+    height: 100vh;
+    padding-top: 40px;
+    background-color: #fff;
+    transition: all .6s;
+    z-index: 200;
+    overflow-y: auto; /* メニューが多くなったらスクロールできるように */
+  }
+  .hamburger {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px; /* クリックしやすいようにちゃんと幅を指定する */
+    height: 40px; /* クリックしやすいようにちゃんと高さを指定する */
+    cursor: pointer;
+    z-index: 300;
+  }
+  .global-nav__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .global-nav__item {
+    text-align: center;
+    padding: 0 14px;
+  }
+  .global-nav__item a {
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    text-decoration: none;
+    color: #111;
+  }
+  .global-nav__item a:hover {
+    background-color: #eee;
+  }
+  .hamburger__line {
+    position: absolute;
+    left: -10px;
+    width: 30px;
+    height: 3px;
+    background-color: #111;
+    transition: all .6s;
+  }
+  .hamburger__line--1 {
+    top: 35px;
+  }
+  .hamburger__line--2 {
+    top: 45px;
+  }
+  .hamburger__line--3 {
+    top: 55px;
+  }
+  .black-bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .6s;
+    cursor: pointer;
+  }
+  /* 表示された時用のCSS */
   
+  .nav-open .global-nav {
+    right: 0;
+  }
+  .nav-open .black-bg {
+    opacity: .8;
+    visibility: visible;
+  }
+  .nav-open .hamburger__line--1 {
+    transform: rotate(45deg);
+    top: 45px;
+  }
+  .nav-open .hamburger__line--2 {
+    width: 0;
+    left: 50%;
+  }
+  .nav-open .hamburger__line--3 {
+    transform: rotate(-45deg);
+    top: 45px;
+  }
+    
 }

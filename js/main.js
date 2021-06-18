@@ -37,6 +37,9 @@ const swiper = new Swiper('.swiper-container', {
     delay: 5000 // 次のスライドに切り替わる時間の設定（ミリ秒:1000=1秒）
   },
   breakpoints: {
+    701: {
+      slidesPerView: 1.95
+    },
     1001: {
       slidesPerView: 3.75, // １度に表示するスライド数
       spaceBetween: 56, // スライド同士の余白
@@ -92,4 +95,9 @@ $('#form').submit(function (event) {
   });
   event.preventDefault();
 });
+
+
+AOS.init();
+
+
 
