@@ -1,0 +1,9 @@
+AuthUserFile /Users/RyutoIjichi/Desktop/your-coding/.htpasswd
+AuthGroupFile /dev/null
+AuthType Basic
+AuthName "please enter your ID and password"
+require valid-user
+<Files ~ "\.ht.*$">
+  order allow,deny
+  deny from all
+</Files>
