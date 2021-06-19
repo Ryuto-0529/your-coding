@@ -655,22 +655,22 @@ responsive
   .global-nav {
     display: block;
     position: fixed;
-    right: -320px; /* これで隠れる */
+    right: -320px;
     top: 0;
-    width: 300px; /* スマホに収まるくらい */
+    width: 300px;
     height: 100vh;
     padding-top: 40px;
     background-color: #fff;
     transition: all .6s;
     z-index: 200;
-    overflow-y: auto; /* メニューが多くなったらスクロールできるように */
+    overflow-y: auto; 
   }
   .hamburger {
     position: absolute;
-    right: 0;
-    top: 0;
-    width: 40px; /* クリックしやすいようにちゃんと幅を指定する */
-    height: 40px; /* クリックしやすいようにちゃんと高さを指定する */
+    right: 15px;
+    top: 25px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
     z-index: 300;
   }
@@ -678,6 +678,9 @@ responsive
     margin: 0;
     padding: 0;
     list-style: none;
+  }
+  .global-nav__list:first-child {
+    margin-top: 20px;
   }
   .global-nav__item {
     text-align: center;
@@ -695,20 +698,20 @@ responsive
   }
   .hamburger__line {
     position: absolute;
-    left: -10px;
+    left: 5px;
     width: 30px;
     height: 3px;
     background-color: #111;
     transition: all .6s;
   }
   .hamburger__line--1 {
-    top: 35px;
+    top: 10px;
   }
   .hamburger__line--2 {
-    top: 45px;
+    top: 20px;
   }
   .hamburger__line--3 {
-    top: 55px;
+    top: 30px;
   }
   .black-bg {
     position: fixed;
@@ -734,7 +737,7 @@ responsive
   }
   .nav-open .hamburger__line--1 {
     transform: rotate(45deg);
-    top: 45px;
+    top: 20px;
   }
   .nav-open .hamburger__line--2 {
     width: 0;
@@ -742,7 +745,7 @@ responsive
   }
   .nav-open .hamburger__line--3 {
     transform: rotate(-45deg);
-    top: 45px;
+    top: 20px;
   }
     
 }
